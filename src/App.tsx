@@ -1,5 +1,11 @@
+import Header from './components/Header/Header'
+
 function App() {
-  return <div>Byteex Product Page — Test Vercel</div>
+    return (
+        <>
+            <Header />
+        </>
+    )
 }
 
 export default App
