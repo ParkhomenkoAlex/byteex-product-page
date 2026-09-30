@@ -18,13 +18,11 @@ function Benefits({
 }: BenefitsProps) {
   return (
     <ul
-      className={
-        `${styles.list}${className ? ` ${className}` : ''}${
-          alignIconsToTop ? ` ${styles.alignIconsToTop}` : ''
-        }${stackOnMobile ? ` ${styles.stackOnMobile}` : ''}${
-          topBenefitsStyle ? ` ${styles.topBenefitsStyle}` : ''
-        }`
-      }
+      className={`${styles.list}${className ? ` ${className}` : ''}${
+        alignIconsToTop ? ` ${styles.alignIconsToTop}` : ''
+      }${stackOnMobile ? ` ${styles.stackOnMobile}` : ''}${
+        topBenefitsStyle ? ` ${styles.topBenefitsStyle}` : ''
+      }`}
     >
       {items.map((item) => (
         <li key={item._key} className={styles.item}>

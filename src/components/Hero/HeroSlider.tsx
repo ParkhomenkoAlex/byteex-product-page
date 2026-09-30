@@ -6,12 +6,7 @@ type HeroSliderProps = {
   slides: HeroSlide[]
 }
 
-type SlidePosition =
-  | 'farPrevious'
-  | 'previous'
-  | 'active'
-  | 'next'
-  | 'farNext'
+type SlidePosition = 'farPrevious' | 'previous' | 'active' | 'next' | 'farNext'
 
 function HeroSlider({ slides }: HeroSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -65,19 +60,17 @@ function HeroSlider({ slides }: HeroSliderProps) {
         aria-current={isActive ? 'true' : undefined}
         aria-hidden={!isVisible}
         tabIndex={isVisible ? 0 : -1}
-        className={
-          `${styles.slide} ${
-            position === 'active'
-              ? styles.slideActive
-              : position === 'previous'
-                ? styles.slidePrevious
-                : position === 'next'
-                  ? styles.slideNext
-                  : position === 'farPrevious'
-                    ? styles.slideFarPrevious
-                    : styles.slideFarNext
-          }`
-        }
+        className={`${styles.slide} ${
+          position === 'active'
+            ? styles.slideActive
+            : position === 'previous'
+              ? styles.slidePrevious
+              : position === 'next'
+                ? styles.slideNext
+                : position === 'farPrevious'
+                  ? styles.slideFarPrevious
+                  : styles.slideFarNext
+        }`}
       >
         <img src={slide.image?.asset?.url} alt={slide.alt || ''} />
       </button>

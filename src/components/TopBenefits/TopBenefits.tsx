@@ -35,7 +35,9 @@ function TopBenefits() {
       </div>
 
       <div className={`${styles.shell} ${styles.content}`}>
-        {content.heading && <h2 className={styles.heading}>{content.heading}</h2>}
+        {content.heading && (
+          <h2 className={styles.heading}>{content.heading}</h2>
+        )}
         <div className={styles.imageSlider}>
           <TopBenefitsImageSlider slides={content.slides ?? []} />
         </div>

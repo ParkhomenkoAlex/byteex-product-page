@@ -28,7 +28,9 @@ function CompanyLogoSlider({ label, logos }: CompanyLogoSliderProps) {
     const updatePagination = () => {
       const maxScroll = viewport.scrollWidth - viewport.clientWidth
       const nextPageCount =
-        maxScroll > 0 ? Math.ceil(viewport.scrollWidth / viewport.clientWidth) : 1
+        maxScroll > 0
+          ? Math.ceil(viewport.scrollWidth / viewport.clientWidth)
+          : 1
 
       setPageCount(nextPageCount)
       setActivePage(
@@ -101,9 +103,7 @@ function CompanyLogoSlider({ label, logos }: CompanyLogoSliderProps) {
       <div
         ref={viewportRef}
         className={
-          isDragging
-            ? `${styles.viewport} ${styles.dragging}`
-            : styles.viewport
+          isDragging ? `${styles.viewport} ${styles.dragging}` : styles.viewport
         }
         onMouseDown={handleMouseDown}
         onDragStart={(event) => event.preventDefault()}

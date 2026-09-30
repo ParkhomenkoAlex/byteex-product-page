@@ -37,7 +37,9 @@
   height: 6px;
   border-radius: 999px;
   background: rgb(1 0 91 / 24%);
-  transition: background-color 160ms ease, transform 160ms ease;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
 }
 
 .bulletActive {
