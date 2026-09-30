@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero'
 import TopBenefits from './components/TopBenefits/TopBenefits'
 import TalkAbout from './components/TalkAbout/TalkAbout'
 import HowToOrder from './components/HowToOrder/HowToOrder'
+import InfoBanner from './components/InfoBanner/InfoBanner'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <TopBenefits />
         <TalkAbout />
         <HowToOrder />
+        <InfoBanner />
       </main>
     </>
   )
