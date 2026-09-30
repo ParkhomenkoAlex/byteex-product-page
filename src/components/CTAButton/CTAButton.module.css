@@ -1,0 +1,26 @@
+.button {
+  display: inline-flex;
+  width: 100%;
+  max-width: 369px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 4px;
+  color: #fff;
+  background: #01005b;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.button:hover {
+  background: #15146d;
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+}
