@@ -43,8 +43,11 @@
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border-radius: 50%;
+  background: #E4E4E4;
   object-fit: contain;
 }
 
@@ -74,8 +77,9 @@
   }
 
   .icon {
-    width: 34px;
-    height: 34px;
+    width: 46px;
+    height: 46px;
+    padding: 10px;
   }
 }
 
