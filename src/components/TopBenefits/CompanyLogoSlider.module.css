@@ -1,0 +1,91 @@
+.label {
+  margin: 0 0 18px;
+  color: #868787;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.viewport {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x;
+  user-select: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgb(1 0 91 / 24%);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.bulletActive {
+  background: #01005b;
+  transform: scale(1.15);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 0 20px;
+  list-style: none;
+}
+
+.logo {
+  display: grid;
+  width: 112px;
+  height: 54px;
+  flex: 0 0 112px;
+  place-items: center;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (min-width: 760px) {
+  .pagination {
+    display: none;
+  }
+
+  .track {
+    gap: clamp(24px, 3vw, 48px);
+    padding: 0;
+  }
+
+  .logo {
+    width: clamp(112px, 12vw, 144px);
+    height: 64px;
+    flex-basis: clamp(112px, 12vw, 144px);
+  }
+}

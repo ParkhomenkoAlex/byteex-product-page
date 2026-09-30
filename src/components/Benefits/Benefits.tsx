@@ -4,11 +4,28 @@ import type { Benefit } from './Benefits.types'
 type BenefitsProps = {
   items: Benefit[]
   className?: string
+  alignIconsToTop?: boolean
+  stackOnMobile?: boolean
+  topBenefitsStyle?: boolean
 }
 
-function Benefits({ items, className }: BenefitsProps) {
+function Benefits({
+  items,
+  className,
+  alignIconsToTop = false,
+  stackOnMobile = false,
+  topBenefitsStyle = false,
+}: BenefitsProps) {
   return (
-    <ul className={className ? `${styles.list} ${className}` : styles.list}>
+    <ul
+      className={
+        `${styles.list}${className ? ` ${className}` : ''}${
+          alignIconsToTop ? ` ${styles.alignIconsToTop}` : ''
+        }${stackOnMobile ? ` ${styles.stackOnMobile}` : ''}${
+          topBenefitsStyle ? ` ${styles.topBenefitsStyle}` : ''
+        }`
+      }
+    >
       {items.map((item) => (
         <li key={item._key} className={styles.item}>
           {item.icon?.asset?.url && (
