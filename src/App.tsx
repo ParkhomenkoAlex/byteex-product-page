@@ -2,6 +2,7 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import TopBenefits from './components/TopBenefits/TopBenefits'
 import TalkAbout from './components/TalkAbout/TalkAbout'
+import HowToOrder from './components/HowToOrder/HowToOrder'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
         <TopBenefits />
         <TalkAbout />
+        <HowToOrder />
       </main>
     </>
   )
