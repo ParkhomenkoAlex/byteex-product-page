@@ -47,6 +47,10 @@
   margin-top: 24px;
 }
 
+.heroSlider {
+  width: 100%;
+}
+
 /* On smaller screens the reading order stays heading → carousel → benefits → CTA. */
 @media (min-width: 600px) {
   .heroSection {
@@ -56,6 +60,10 @@
   .heroCopy h1 {
     font-size: 32px;
     line-height: 1.25;
+  }
+
+  .heroSlider.heroSlider {
+    width: min(100%, 620px);
   }
 }
 
@@ -67,6 +75,15 @@
 
   .heroGridWithSlider {
     min-height: clamp(270px, 32.7vw, 422px);
+  }
+
+  .heroSlider.heroSlider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54%;
+    max-width: 725px;
+    margin: 0;
   }
 
   .heroCopy {
@@ -98,6 +115,10 @@
 
   .heroGrid {
     margin-top: 40px;
+  }
+
+  .heroSlider.heroSlider {
+    width: 57%;
   }
 
   .heroCta {

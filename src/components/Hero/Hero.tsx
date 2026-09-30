@@ -3,7 +3,7 @@ import { sanityClient } from '../../lib/sanity'
 import Benefits from '../Benefits/Benefits'
 import CTAButton from '../CTAButton/CTAButton'
 import { HERO_QUERY } from './Hero.query'
-import HeroSlider from './HeroSlider'
+import HorizontalSlider from '../HorizontalSlider/HorizontalSlider'
 import type { HeroContent } from './Hero.types'
 import styles from './Hero.module.css'
 
@@ -46,7 +46,10 @@ function Hero() {
           <div className={styles.heroCopy}>
             <h1>{hero.heading}</h1>
 
-            <HeroSlider slides={hero.slides ?? []} />
+            <HorizontalSlider
+              className={styles.heroSlider}
+              slides={hero.slides ?? []}
+            />
 
             <Benefits items={hero.benefits ?? []} />
 
