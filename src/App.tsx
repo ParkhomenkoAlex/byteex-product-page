@@ -4,6 +4,7 @@ import TopBenefits from './components/TopBenefits/TopBenefits'
 import TalkAbout from './components/TalkAbout/TalkAbout'
 import HowToOrder from './components/HowToOrder/HowToOrder'
 import InfoBanner from './components/InfoBanner/InfoBanner'
+import FinalCTA from './components/FinalCTA/FinalCTA'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <TalkAbout />
         <HowToOrder />
         <InfoBanner />
+        <FinalCTA />
       </main>
     </>
   )

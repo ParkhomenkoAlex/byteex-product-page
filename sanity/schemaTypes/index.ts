@@ -4,6 +4,7 @@ import {topBenefits} from './topBenefits'
 import {talkAboutSection} from './talkAboutSection'
 import {howToOrderSection} from './howToOrderSection'
 import {infoBanner} from './infoBanner'
+import {finalCta} from './finalCta'
 
 export const schemaTypes = [
   header,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   talkAboutSection,
   howToOrderSection,
   infoBanner,
+  finalCta,
 ]
