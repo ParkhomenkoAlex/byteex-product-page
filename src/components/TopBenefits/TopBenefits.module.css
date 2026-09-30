@@ -1,0 +1,95 @@
+.section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #faf2e7 0, #fff 280px);
+  padding-bottom: 56px;
+}
+
+.shell {
+  width: min(100% - 40px, 1272px);
+  margin: 0 auto;
+}
+
+.logoBand {
+  padding: 28px 0;
+}
+
+.content {
+  display: grid;
+  gap: 0;
+  padding-top: 52px;
+}
+
+.heading {
+  max-width: 340px;
+  margin: 0;
+  justify-self: center;
+  color: #01005b;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.imageSlider {
+  width: min(100%, 303px);
+  justify-self: center;
+  margin-top: 28px;
+}
+
+.benefits {
+  margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+  .shell {
+    width: min(100% - 80px, 1272px);
+  }
+
+  .logoBand {
+    padding: 34px 0;
+  }
+
+  .content {
+    padding-top: 58px;
+  }
+}
+
+@media (min-width: 760px) {
+  .content {
+    width: min(100% - 96px, 1176px);
+    grid-template-columns: minmax(0, 1fr) clamp(360px, 29.56vw, 433px);
+    grid-template-areas:
+      'heading slider'
+      'benefits slider';
+    align-items: start;
+    column-gap: clamp(72px, 8.9vw, 130px);
+    padding-top: 64px;
+  }
+
+  .heading {
+    grid-area: heading;
+    max-width: 620px;
+    justify-self: start;
+    font-size: clamp(30px, 2.18vw, 32px);
+    line-height: 1.18;
+    text-align: left;
+  }
+
+  .imageSlider {
+    grid-area: slider;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .benefits {
+    grid-area: benefits;
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .shell {
+    width: min(100% - 168px, 1272px);
+  }
+}

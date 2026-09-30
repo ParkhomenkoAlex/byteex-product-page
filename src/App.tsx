@@ -1,5 +1,6 @@
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
+import TopBenefits from './components/TopBenefits/TopBenefits'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <TopBenefits />
       </main>
     </>
   )
