@@ -57,7 +57,12 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     }
 
     const finishDrag = () => {
-      if (dragRef.current?.moved) didDragRef.current = true
+      if (dragRef.current?.moved) {
+        didDragRef.current = true
+        window.setTimeout(() => {
+          didDragRef.current = false
+        }, 0)
+      }
       dragRef.current = null
       setIsDragging(false)
     }
@@ -114,7 +119,11 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
         onMouseDown={handleMouseDown}
         onDragStart={(event) => event.preventDefault()}
       >
-        <div className={styles.previewTrack} aria-label="Review previews">
+        <div
+          className={styles.previewTrack}
+          role="group"
+          aria-label="Review previews"
+        >
           {reviews.map((review, index) => (
             <button
               type="button"
@@ -135,6 +144,8 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
                 <img
                   src={review.avatar.asset.url}
                   alt={review.avatar.alt || ''}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
               )}
             </button>
@@ -154,7 +165,11 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
             <path d="m14 5-7 7 7 7" />
           </svg>
         </button>
-        <div className={styles.cardsViewport}>
+        <div
+          className={styles.cardsViewport}
+          role="region"
+          aria-label="Customer reviews"
+        >
           <div
             className={styles.cardsTrack}
             style={{ '--track-index': trackIndex } as React.CSSProperties}
@@ -180,6 +195,8 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
                           className={styles.avatar}
                           src={review.avatar.asset.url}
                           alt={review.avatar.alt || ''}
+                          loading={index === 0 ? 'eager' : 'lazy'}
+                          decoding="async"
                         />
                       )}
                       <div>
