@@ -19,6 +19,12 @@ export const reviewsSection = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'ctaText',
+      title: 'CTA Text',
+      type: 'string',
+    }),
+    defineField({name: 'ctaLink', title: 'CTA Link', type: 'string'}),
+    defineField({
       name: 'reviews',
       title: 'Reviews',
       type: 'array',

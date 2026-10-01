@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { sanityClient } from '../../lib/sanity'
+import CTAButton from '../CTAButton/CTAButton'
 import { REVIEWS_QUERY } from './Reviews.query'
 import ReviewsSlider from './ReviewsSlider'
 import type { ReviewsContent } from './Reviews.types'
@@ -25,6 +26,9 @@ function Reviews() {
         {content.heading && <h2 className={styles.heading}>{content.heading}</h2>}
         {content.description && <p className={styles.description}>{content.description}</p>}
         <ReviewsSlider reviews={content.reviews ?? []} />
+        {content.ctaText && (
+          <CTAButton className={styles.cta} text={content.ctaText} href={content.ctaLink} />
+        )}
       </div>
     </section>
   )

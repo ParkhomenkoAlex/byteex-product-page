@@ -29,6 +29,13 @@
   text-align: center;
 }
 
+.cta {
+  display: flex;
+  width: 100%;
+  max-width: 288px;
+  margin: 32px auto 0;
+}
+
 @media (min-width: 600px) {
   .section {
     padding: 72px 40px;
@@ -47,6 +54,12 @@
 
   .description {
     margin-top: 22px;
+  }
+
+  .cta {
+    width: min(100%, 369px);
+    max-width: 369px;
+    margin-top: 40px;
   }
 }
 
