@@ -23,11 +23,19 @@ function Reviews() {
   return (
     <section className={styles.section}>
       <div className={styles.shell}>
-        {content.heading && <h2 className={styles.heading}>{content.heading}</h2>}
-        {content.description && <p className={styles.description}>{content.description}</p>}
+        {content.heading && (
+          <h2 className={styles.heading}>{content.heading}</h2>
+        )}
+        {content.description && (
+          <p className={styles.description}>{content.description}</p>
+        )}
         <ReviewsSlider reviews={content.reviews ?? []} />
         {content.ctaText && (
-          <CTAButton className={styles.cta} text={content.ctaText} href={content.ctaLink} />
+          <CTAButton
+            className={styles.cta}
+            text={content.ctaText}
+            href={content.ctaLink}
+          />
         )}
       </div>
     </section>

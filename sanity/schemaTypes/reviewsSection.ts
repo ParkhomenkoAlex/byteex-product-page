@@ -39,9 +39,7 @@ export const reviewsSection = defineType({
               title: 'Avatar',
               type: 'image',
               options: {hotspot: true},
-              fields: [
-                defineField({name: 'alt', title: 'Alternative Text', type: 'string'}),
-              ],
+              fields: [defineField({name: 'alt', title: 'Alternative Text', type: 'string'})],
               validation: (Rule) => Rule.required(),
             }),
             defineField({

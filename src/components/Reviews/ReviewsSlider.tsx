@@ -9,9 +9,11 @@ type ReviewsSliderProps = {
 function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   const previewsRef = useRef<HTMLDivElement>(null)
   const previewRefs = useRef<Array<HTMLButtonElement | null>>([])
-  const dragRef = useRef<{ startX: number; scrollLeft: number; moved: boolean } | null>(
-    null,
-  )
+  const dragRef = useRef<{
+    startX: number
+    scrollLeft: number
+    moved: boolean
+  } | null>(null)
   const didDragRef = useRef(false)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
@@ -106,7 +108,9 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     <div className={styles.slider}>
       <div
         ref={previewsRef}
-        className={isDragging ? `${styles.previews} ${styles.dragging}` : styles.previews}
+        className={
+          isDragging ? `${styles.previews} ${styles.dragging}` : styles.previews
+        }
         onMouseDown={handleMouseDown}
         onDragStart={(event) => event.preventDefault()}
       >
@@ -128,7 +132,10 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
               aria-current={index === activeIndex ? 'true' : undefined}
             >
               {review.avatar?.asset?.url && (
-                <img src={review.avatar.asset.url} alt={review.avatar.alt || ''} />
+                <img
+                  src={review.avatar.asset.url}
+                  alt={review.avatar.alt || ''}
+                />
               )}
             </button>
           ))}
@@ -153,7 +160,10 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
             style={{ '--track-index': trackIndex } as React.CSSProperties}
           >
             {reviews.map((review, index) => {
-              const rating = Math.max(0, Math.min(5, Math.round(review.rating ?? 0)))
+              const rating = Math.max(
+                0,
+                Math.min(5, Math.round(review.rating ?? 0)),
+              )
 
               return (
                 <article className={styles.cardWrap} key={review._key}>
@@ -173,10 +183,17 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
                         />
                       )}
                       <div>
-                        <div className={styles.stars} aria-label={`${rating} out of 5 stars`}>
+                        <div
+                          className={styles.stars}
+                          aria-label={`${rating} out of 5 stars`}
+                        >
                           {Array.from({ length: 5 }, (_, starIndex) => (
                             <span
-                              className={starIndex < rating ? styles.starFilled : styles.star}
+                              className={
+                                starIndex < rating
+                                  ? styles.starFilled
+                                  : styles.star
+                              }
                               key={starIndex}
                               aria-hidden="true"
                             >
@@ -184,10 +201,14 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
                             </span>
                           ))}
                         </div>
-                        {review.name && <h3 className={styles.name}>{review.name}</h3>}
+                        {review.name && (
+                          <h3 className={styles.name}>{review.name}</h3>
+                        )}
                       </div>
                     </div>
-                    {review.text && <p className={styles.text}>{review.text}</p>}
+                    {review.text && (
+                      <p className={styles.text}>{review.text}</p>
+                    )}
                   </div>
                 </article>
               )
