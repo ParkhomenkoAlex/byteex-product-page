@@ -15,6 +15,7 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     moved: boolean
   } | null>(null)
   const didDragRef = useRef(false)
+  const shouldCenterPreviewRef = useRef(false)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
   const [visibleCards, setVisibleCards] = useState(1)
@@ -37,11 +38,14 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   }, [])
 
   useEffect(() => {
+    if (!shouldCenterPreviewRef.current) return
+
     previewRefs.current[activeIndex]?.scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
       inline: 'center',
     })
+    shouldCenterPreviewRef.current = false
   }, [activeIndex])
 
   useEffect(() => {
@@ -81,6 +85,7 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
       didDragRef.current = false
       return
     }
+    shouldCenterPreviewRef.current = true
     setActiveIndex(index)
   }
 
@@ -98,9 +103,14 @@ function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     setIsDragging(true)
   }
 
-  const showPrevious = () => setActiveIndex((index) => Math.max(0, index - 1))
-  const showNext = () =>
+  const showPrevious = () => {
+    shouldCenterPreviewRef.current = true
+    setActiveIndex((index) => Math.max(0, index - 1))
+  }
+  const showNext = () => {
+    shouldCenterPreviewRef.current = true
     setActiveIndex((index) => Math.min(reviews.length - 1, index + 1))
+  }
 
   if (!reviews.length) return null
 
