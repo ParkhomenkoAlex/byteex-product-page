@@ -1,0 +1,94 @@
+.slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.72;
+  align-self: center;
+  overflow: hidden;
+  margin: 24px auto 0;
+}
+
+.backgroundCard {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  width: 28.83%;
+  height: 50%;
+  background: #f9f0e5;
+  transform: translateY(-50%);
+}
+
+.backgroundPrevious {
+  left: 3.48%;
+}
+
+.backgroundNext {
+  right: 0;
+}
+
+.slide {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  overflow: hidden;
+  padding: 0;
+  border: 3px solid #fff;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition:
+    left 420ms ease,
+    top 420ms ease,
+    width 420ms ease,
+    height 420ms ease,
+    border-radius 420ms ease,
+    box-shadow 420ms ease,
+    opacity 220ms ease;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideActive {
+  z-index: 2;
+  top: 0;
+  left: 51.1%;
+  width: 35.86%;
+  height: 100%;
+}
+
+.slidePrevious,
+.slideNext {
+  z-index: 1;
+  top: 12.44%;
+  width: 28.83%;
+  height: 75.12%;
+}
+
+.slidePrevious {
+  left: 23.66%;
+}
+
+.slideNext {
+  left: 79.82%;
+}
+
+.slideFarPrevious,
+.slideFarNext {
+  top: 12.44%;
+  width: 28.83%;
+  height: 75.12%;
+  border-radius: clamp(8px, 1.15vw, 14px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slideFarPrevious {
+  left: -12%;
+}
+
+.slideFarNext {
+  left: 112%;
+}

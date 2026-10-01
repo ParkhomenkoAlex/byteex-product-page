@@ -1,6 +1,8 @@
+@import 'tailwindcss';
+
 :root {
   font-family:
-    Inter,
+    'Poppins',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,

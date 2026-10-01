@@ -1,0 +1,98 @@
+.slider {
+  position: relative;
+  width: min(100%, 400px);
+  aspect-ratio: 0.84;
+  margin: 0 auto;
+}
+
+.background {
+  position: absolute;
+  z-index: 0;
+  width: 34%;
+  aspect-ratio: 0.67;
+  background: #f9f0e5;
+}
+
+.backgroundTop {
+  top: 0;
+  left: 0;
+}
+
+.backgroundBottom {
+  right: 0;
+  bottom: 0;
+}
+
+.image {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0;
+  border: 3px solid #fff;
+  background: #f9f0e5;
+  cursor: pointer;
+  transition:
+    top 420ms ease,
+    right 420ms ease,
+    bottom 420ms ease,
+    left 420ms ease,
+    width 420ms ease,
+    height 420ms ease,
+    opacity 220ms ease,
+    transform 420ms ease,
+    box-shadow 220ms ease;
+}
+
+.image:hover {
+  box-shadow: 0 4px 16px rgb(1 0 91 / 16%);
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active {
+  z-index: 2;
+  top: 8%;
+  left: 50%;
+  width: 67%;
+  height: 88%;
+  transform: translateX(-50%);
+}
+
+.next,
+.previous {
+  width: 34%;
+  height: 43%;
+}
+
+.next {
+  z-index: 3;
+  top: 0;
+  right: 0;
+}
+
+.previous {
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+}
+
+.hidden {
+  top: 50%;
+  left: 50%;
+  width: 34%;
+  height: 43%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+}

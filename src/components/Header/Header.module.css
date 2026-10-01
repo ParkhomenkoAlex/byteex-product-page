@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: #f9f0e5;
+}
+
+.desktopText,
+.mobileText {
+  margin: 0;
+  color: #000;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 18px;
+  text-align: center;
+}
+
+.desktopText {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .header {
+    padding: 8px 24px;
+  }
+
+  .desktopText {
+    display: block;
+  }
+
+  .mobileText {
+    display: none;
+  }
+}
