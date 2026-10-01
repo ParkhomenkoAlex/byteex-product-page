@@ -76,6 +76,7 @@ function TopBenefitsImageSlider({ slides }: TopBenefitsImageSliderProps) {
               }
               onClick={() => setActiveIndex(index)}
               aria-current={index === activeIndex ? 'true' : undefined}
+              aria-label={`Show image ${index + 1}`}
             >
               <span className={styles.thumbnailImage}>
                 <img src={slide.image?.asset?.url} alt="" />

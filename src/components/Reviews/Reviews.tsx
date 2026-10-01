@@ -30,7 +30,7 @@ function Reviews() {
           <p className={styles.description}>{content.description}</p>
         )}
         <ReviewsSlider reviews={content.reviews ?? []} />
-        {content.ctaText && (
+        {content.ctaText && content.ctaLink && (
           <CTAButton
             className={styles.cta}
             text={content.ctaText}
