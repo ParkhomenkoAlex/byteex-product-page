@@ -6,6 +6,7 @@ import {howToOrderSection} from './howToOrderSection'
 import {infoBanner} from './infoBanner'
 import {finalCta} from './finalCta'
 import {faqSection} from './faqSection'
+import {reviewsSection} from './reviewsSection'
 
 export const schemaTypes = [
   header,
@@ -13,6 +14,7 @@ export const schemaTypes = [
   topBenefits,
   talkAboutSection,
   howToOrderSection,
+  reviewsSection,
   faqSection,
   infoBanner,
   finalCta,
