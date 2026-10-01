@@ -27,3 +27,8 @@ body,
 body {
   margin: 0;
 }
+
+:focus-visible {
+  outline: 2px solid #01005b;
+  outline-offset: 3px;
+}
