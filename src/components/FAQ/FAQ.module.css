@@ -1,0 +1,135 @@
+.section {
+  overflow: hidden;
+  background: #fff;
+  padding: 64px 20px;
+}
+
+.shell {
+  width: min(100%, 1176px);
+  margin: 0 auto;
+}
+
+.layout {
+  display: grid;
+  gap: 48px;
+}
+
+.heading {
+  margin: 0;
+  color: #01005b;
+  font-size: clamp(28px, 6.5vw, 34px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.items {
+  margin-top: 28px;
+}
+
+.item {
+  border-bottom: 1px solid #e9e7e4;
+}
+
+.item:first-child {
+  border-top: 1px solid #e9e7e4;
+}
+
+.question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border: 0;
+  background: transparent;
+  color: #01005b;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.symbol {
+  flex: 0 0 auto;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms ease;
+}
+
+.answerOpen {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  color: #676869;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  line-height: 1.55;
+  transition: padding 280ms ease;
+}
+
+.answerOpen .answerInner {
+  padding: 0 40px 20px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer,
+  .answerInner {
+    transition: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .section {
+    padding: 72px 40px;
+  }
+}
+
+@media (min-width: 760px) {
+  .section {
+    padding: 88px 48px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    align-items: center;
+    gap: clamp(48px, 7vw, 96px);
+  }
+
+  .heading {
+    font-size: clamp(30px, 2.3vw, 34px);
+    line-height: 1.18;
+    text-align: left;
+  }
+
+  .items {
+    margin-top: 30px;
+  }
+
+  .question {
+    padding: 20px 0;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .section {
+    padding-right: 84px;
+    padding-left: 84px;
+  }
+}

@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import styles from './TalkAboutSlider.module.css'
-import type { TalkAboutImage } from './TalkAbout.types'
+import styles from './FAQSlider.module.css'
+import type { FAQImage } from './FAQ.types'
 
-type TalkAboutSliderProps = { images: TalkAboutImage[] }
+type FAQSliderProps = {
+  images: FAQImage[]
+}
 
 type ImagePosition = 'active' | 'next' | 'previous' | 'hidden'
 
-function TalkAboutSlider({ images }: TalkAboutSliderProps) {
+function FAQSlider({ images }: FAQSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const availableImages = images.filter((image) => image.asset?.url)
 
@@ -33,6 +35,14 @@ function TalkAboutSlider({ images }: TalkAboutSliderProps) {
 
   return (
     <div className={styles.slider} aria-roledescription="carousel">
+      <span
+        className={`${styles.background} ${styles.backgroundTop}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`${styles.background} ${styles.backgroundBottom}`}
+        aria-hidden="true"
+      />
       {availableImages.map((image, index) => {
         const position = getPosition(index)
         const isActive = position === 'active'
@@ -44,12 +54,12 @@ function TalkAboutSlider({ images }: TalkAboutSliderProps) {
             key={image._key}
             className={`${styles.image} ${styles[position]}`}
             onClick={() => setActiveIndex(index)}
-            aria-label={`Show image ${index + 1}`}
+            aria-label={image.alt || `Show image ${index + 1}`}
             aria-current={isActive ? 'true' : undefined}
             aria-hidden={!isVisible}
             tabIndex={isVisible ? 0 : -1}
           >
-            <img src={image.asset?.url} alt="" />
+            <img src={image.asset?.url} alt={image.alt || ''} />
           </button>
         )
       })}
@@ -57,4 +67,4 @@ function TalkAboutSlider({ images }: TalkAboutSliderProps) {
   )
 }
 
-export default TalkAboutSlider
+export default FAQSlider
